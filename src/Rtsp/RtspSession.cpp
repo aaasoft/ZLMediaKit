@@ -1048,7 +1048,7 @@ bool RtspSession::sendRtspResponse(const string &res_code, const StrCaseMap &hea
         header.emplace("Session", _sessionid);
     }
 
-    header.emplace("Server",kServerName);
+    //header.emplace("Server",kServerName);
     header.emplace("Date",dateStr());
 
     if(!sdp.empty()){

@@ -592,7 +592,7 @@ void HttpSession::sendResponse(int code,
 
     HttpSession::KeyValue &headerOut = const_cast<HttpSession::KeyValue &>(header);
     headerOut.emplace("Date", dateStr());
-    headerOut.emplace("Server", kServerName);
+    //headerOut.emplace("Server", kServerName);
     headerOut.emplace("Connection", bClose ? "close" : "keep-alive");
 
     GET_CONFIG(bool, allow_cross_domains, Http::kAllowCrossDomains);
