@@ -51,6 +51,8 @@ public:
 
     template <typename K, typename V>
     void emplace_force(K &&k, V &&v) {
+        if(Super::count(std::forward<K>(k))>0)
+            Super::erase(std::forward<K>(k));
         Super::emplace(std::forward<K>(k), std::forward<V>(v));
     }
 };
